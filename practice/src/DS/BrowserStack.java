@@ -13,8 +13,8 @@ public class BrowserStack {
         current.add(start);
         for (String action:  actions) {
             if (action.matches("[A-Z]") ) {
-                prevStack.add(current.pop());
-                current.add(action);
+                prevStack.push(current.pop());
+                current.push(action);
                 nextStack.clear();
             } else if (action.equals("-1")) {
                 if (!prevStack.empty()) {
